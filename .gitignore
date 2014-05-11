@@ -1,0 +1,5 @@
+*.coverprofile
+
+# github.com/codegangsta/gin
+gin-bin
+
