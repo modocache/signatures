@@ -72,7 +72,7 @@ var _ = Describe("Server", func() {
 
 			It("returns a null body", func() {
 				server.ServeHTTP(recorder, request)
-				Expect(recorder.Body.String()).To(Equal("null"))
+				Expect(recorder.Body.String()).To(Equal("[]"))
 			})
 		})
 

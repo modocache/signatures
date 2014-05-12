@@ -34,7 +34,11 @@ I'll use this method when displaying all signatures for
 http://godoc.org/labix.org/v2/mgo
 */
 func fetchAllSignatures(db *mgo.Database) []Signature {
-	var signatures []Signature
-	db.C("signatures").Find(nil).All(&signatures)
+	signatures := []Signature{}
+	err := db.C("signatures").Find(nil).All(&signatures)
+	if err != nil {
+		panic(err)
+	}
+
 	return signatures
 }
